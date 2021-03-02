@@ -1,0 +1,13 @@
+body {
+    color: #000;
+    
+    height: 520px;
+    background-image: linear-gradient(to right top, #666274, #5e566d, #584a65, #523e5d, #4d3254, #452b4b, #3d2442, #351d3a, #29192f, #1f1524, #161019, #09070b);
+    background-repeat: no-repeat
+}
+
+.card {
+    margin: 0 auto; /* Added */
+    background-color: rgba(255,255,255, 0.2) !important;
+        margin-bottom: 10px; /* Added */
+}
