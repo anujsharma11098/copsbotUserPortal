@@ -1,0 +1,7 @@
+body {
+    color: #000;
+    
+    height: 722px;
+    background-image: linear-gradient(to right top, #666274, #5e566d, #584a65, #523e5d, #4d3254, #452b4b, #3d2442, #351d3a, #29192f, #1f1524, #161019, #09070b);
+    background-repeat: no-repeat
+}
