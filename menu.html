@@ -28,7 +28,7 @@
           </nav>
 
 		  <div class="container p-5" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(3, 3, 3, 0.19);">
-			<div class="row text-center">
+			<div class="row p-5 text-center">
 				<div class="col-sm-4">
 					<a href="./complaintForm.html" style="color: inherit;  text-decoration: none;">
 						<div class="card" style="color:white;background-color: #FF6F91;">
@@ -66,9 +66,52 @@
 					</a>
 				</div>
 			</div>
+			<div class="row p-5 text-center">
+				<div class="col-sm-4">
+					<a href="./chatbot.html" style="color: inherit;  text-decoration: none;">
+						<div class="card" style="color:white;background-color: #FF6F91;">
+							<div class="card-header">
+							<h4>Talk to ChatBot</h4>
+							</div>
+							<div class="card-body">
+							<h5 class="card-title">Special title treatment</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="./reportIncident.html" style="color: inherit; text-decoration: none; ">
+						<div class="card"  style="color:white;background-color: #FF9671;">
+							<div class="card-header">
+								<h4>Report a Incident</h4>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">Special title treatment</h5>
+							</div>
+					    </div>
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="./crimeAwareness.html" style="color: none;  text-decoration: none;">
+					<div class="card" style="color:white;background-color: #FFC75F;">
+						<div class="card-header">
+						  <h4>Crime Awareness</h4>
+						</div>
+						<div class="card-body">
+						  <h5 class="card-title">Special title treatment</h5>
+						</div>
+					  </div>
+					</a>
+				</div>
+			</div>
 		  </div>
 	</div>
-
+	<script SameSite="None; Secure" src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+	<script>
+	  var myLandbot = new Landbot.Livechat({
+		configUrl: 'https://chats.landbot.io/v3/H-845235-GIP8XCR42VQAM5K8/index.json',
+	  });
+	</script>
 	
 </body>
 
