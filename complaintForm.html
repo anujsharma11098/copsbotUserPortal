@@ -198,5 +198,70 @@
         configUrl: 'https://chats.landbot.io/v3/H-845235-GIP8XCR42VQAM5K8/index.json',
     });
     </script>
+    <script>
+      window.onload = function(){
+          navigator.geolocation.getCurrentPosition(success, error, options);
+          var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+          };
+
+          function success(pos) {
+              var crd = pos.coords;
+
+              console.log('Your current position is:');
+              console.log(`Latitude : ${crd.latitude}`);
+              console.log(`Longitude: ${crd.longitude}`);
+              console.log(`More or less ${crd.accuracy} meters.`);
+            }
+
+            function error(err) {
+              console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+            
+            
+        }
+      function requestComplaint() {
+        let latitude ,longitude;
+          navigator.geolocation.getCurrentPosition().then(function(position){
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            
+          });
+                  let obj ={ 
+            victimName:$("#firstName").val() +' '+$("#lastName").val() ,
+            complaint:$("#incidentdetails").val(),
+            crimeCategory:$('#crimeselect option:selected').text(),
+            age:$("#age").val(),
+            gender:$('input[name="inlineRadioOptions"]:checked').val(),
+            iLatitude:latitude,
+            iLongitude:longitude,
+            landmark:$("#location").val(),
+            dateOfIncident:$("#incidentdate").val(),
+            timeOfIncident:new Date().toLocaleTimeString() } 
+  
+                  fetch(`https://copsbot-api.herokuapp.com/api/complaints/`, {
+                      method: 'POST',
+                      headers: {
+                          Authorization: user.token,
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(obj)
+                  })
+                      .then(res => res.json())
+                      .then(json => {
+                          iziToast.error({
+                              timeout: 3000,
+                              position: 'topRight',
+                              transitionIn: 'fadeInLeft',
+                              message: json.message
+                          });
+                          if (json.status === 201) location.reload()
+                      })
+                      .catch(err => console.log(err))
+                 
+              }
+    </script>
   </body>
 </html>
